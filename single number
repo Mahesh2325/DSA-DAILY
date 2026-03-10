@@ -1,0 +1,12 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        hashmap = {}
+        for j in range(len(nums)):
+            if nums[j] in hashmap:
+                hashmap[nums[j]]+=1
+            else:
+                hashmap[nums[j]]=1
+        for i in hashmap:
+            if hashmap[i]==1:
+                return i
+                
