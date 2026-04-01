@@ -1,0 +1,18 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        hashmap = {}
+        for i in range(len(s)):
+            if s[i] in hashmap:
+                hashmap[s[i]]+=1
+            else:
+                hashmap[s[i]]=1
+        for j in t:
+            if j not in hashmap:
+                return False
+            else:
+                hashmap[j]-=1
+        for val in hashmap.values():
+            if val!=0:
+                return False
+        return True
+            
