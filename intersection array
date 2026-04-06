@@ -1,0 +1,11 @@
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        hashmap = {}
+        result = []
+        for nums in nums1:
+            hashmap[nums]=1
+        for nums in nums2:
+            if nums in hashmap:
+                result.append(nums)
+                del hashmap[nums]
+        return result
